@@ -63,7 +63,7 @@ export default function App() {
 
         <div className="topbar-right">
           <span className="top-note desktop-only">INTERNET BIRTHDAY DEPT</span>
-          <span className="top-date">25 · 10 · ∞</span>
+          <span className="top-date">25 · 10 · 2000</span>
         </div>
       </header>
 

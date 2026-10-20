@@ -139,7 +139,7 @@ export default function StepCelebration({ onPrev, onRestart }) {
     // Play new track after loaded
     setTimeout(() => {
       if (audioRef.current) {
-        audioRef.current.play().then(() => setIsPlaying(true)).catch(() => {});
+        audioRef.current.play().then(() => setIsPlaying(true)).catch(() => { });
       }
     }, 200);
 
@@ -358,7 +358,7 @@ export default function StepCelebration({ onPrev, onRestart }) {
           <div className="birthday-letter-card">
             <div className="letter-stamp">
               <span>PRIYAL</span>
-              <span>25 · 10</span>
+              <span className="stamp-date">25 · 10 · 2000</span>
             </div>
 
             <div className="letter-header">
@@ -378,11 +378,18 @@ export default function StepCelebration({ onPrev, onRestart }) {
                 Thank you for being the person who answers every 3 AM crisis call, laughs until our stomachs hurt at things that make zero sense, and brings so much light and joy everywhere you go.
               </p>
               <p>
+                I know I’ve made plenty of mistakes and started my fair share of silly arguments - just consider me a work in progress! 🙃 I know I can be annoying and constantly do my unhinged nonsense, but please never stay mad at me, and whatever happens, never give me the silent treatment or stop talking and texting me.
+              </p>
+              <p>
+                No matter what the situation is or what life throws at us, I promise I will always stand by you whenever you need me - without a single doubt. And honestly? Even when I know you’re completely in the wrong 🙃, I’m still taking your side and standing with you against the whole world.
+              </p>
+              <p>
                 May this year bring you breathtaking adventures, peaceful mornings, iced coffees that taste heavenly, and every single dream you've been working toward. You deserve all the good things the universe has to offer.
               </p>
             </div>
 
             <div className="letter-badges">
+              <span className="badge">✦ BORN 25.10.2000</span>
               <span className="badge">✦ 100% UNREPLACEABLE</span>
               <span className="badge">✦ MAIN CHARACTER</span>
               <span className="badge">✦ ICONIC FRIENDSHIP</span>
@@ -408,13 +415,7 @@ export default function StepCelebration({ onPrev, onRestart }) {
                 <Heart size={16} fill="#d45b87" /> Send Infinite Love
               </button>
 
-              <button
-                className="action-btn share-btn"
-                onClick={handleShare}
-              >
-                {copiedLink ? <Check size={16} color="#06d6a0" /> : <Share2 size={16} />}
-                <span>{copiedLink ? "Link Copied!" : "Share Birthday Link"}</span>
-              </button>
+
             </div>
           </div>
         </div>
