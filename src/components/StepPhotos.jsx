@@ -78,8 +78,17 @@ export default function StepPhotos({ onNext, onPrev }) {
   const handleLike = (id, e) => {
     if (e) e.stopPropagation();
 
-    // Trigger celebratory heart confetti
-    fireHeartConfetti();
+    // Calculate tap/click coordinates for bursting hearts right from button
+    let origin = undefined;
+    if (e && typeof e.clientX === "number" && typeof e.clientY === "number" && e.clientX > 0) {
+      origin = {
+        x: Math.max(0.1, Math.min(0.9, e.clientX / window.innerWidth)),
+        y: Math.max(0.1, Math.min(0.9, e.clientY / window.innerHeight)),
+      };
+    }
+
+    // Trigger vector heart confetti without white background box
+    fireHeartConfetti(origin);
 
     // Trigger local heart pulse animation
     setAnimatingId(id);

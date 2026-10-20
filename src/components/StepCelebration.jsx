@@ -410,7 +410,13 @@ export default function StepCelebration({ onPrev, onRestart }) {
 
               <button
                 className="action-btn heart-btn"
-                onClick={() => fireHeartConfetti()}
+                onClick={(e) => {
+                  const origin = e?.clientX ? {
+                    x: Math.max(0.1, Math.min(0.9, e.clientX / window.innerWidth)),
+                    y: Math.max(0.1, Math.min(0.9, e.clientY / window.innerHeight)),
+                  } : undefined;
+                  fireHeartConfetti(origin);
+                }}
               >
                 <Heart size={16} fill="#d45b87" /> Send Infinite Love
               </button>
